@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="view.css">
+    <title>Quote</title>
+    <script>
+        $('#printInvoice').click(function(){
+            Popup($('.invoice')[0].outerHTML);
+            function Popup(data) 
+            {
+                window.print();
+                return true;
+            }
+        });
+    </script>
+</head>
+<body>
+
+<div id="invoice">
+
+<div class="toolbar hidden-print">
+    <div class="text-right">
+        <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
+        <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>
+    </div>
+    <hr>
+</div>
+<div class="invoice overflow-auto">
+
+
+    <div style="min-width: 600px">
+        <header>
+            <div class="row">
+                <div class="col">
+                    <a target="_blank" href="http://springlabs.in/">
+                        <img src="..\images\logo.png" data-holder-rendered="true" style="width:250px; height:100px;"/>
+                        </a>
+                </div>
+                <div class="col company-details">
+                    <h2 class="name">
+                        <a target="_blank" href="http://springlabs.in/">
+                        SpringLabs Pvt Ltd
+                        </a>
+                    </h2>
+                    <!-- <div>#320/1, Opp to Govt. College,<br>
+                        K R Puram, Bengaluru -36, IN.</div> -->
+                    <div>(+91) 8792830184 / (+91) 9538402134</div>
+                    <div>hello@springlabs.in</div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="row contacts">
+                <div class="col invoice-to">
+                    <div class="text-gray-light">INVOICE TO:</div>
+                    <h2 class="to">Client Name</h2>
+                    <div class="address">796 Silver Harbour, TX 79273, US</div>
+                    <div class="email"><a href="mailto:john@example.com">john@example.com</a></div>
+                </div>
+                <div class="col invoice-details">
+                    <h1 class="invoice-id">#12</h1>
+                    <div class="date">Date of Quote: 08/10/2020</div>
+                </div>
+            </div>
+            
+
+            <table border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th class="text-center">Item</th>
+                        <th class="text-center">Qty</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Discount %</th>
+                        <th class="text-center">SGST %</th>
+                        <th class="text-center">CGST %</th>
+                        <th class="text-center">Each Total In INR</th>
+                    </tr>
+                </thead>
+                <tbody>
+               
+               
+                    <!-- <tr>
+                        <td class="no">04</td>
+                        <td class="text-left"><h3>
+                            <a target="_blank" href="https://www.youtube.com/channel/UC_UMEcP_kF0z4E6KbxCpV1w">
+                            Youtube channel
+                            </a>
+                            </h3>
+                           <a target="_blank" href="https://www.youtube.com/channel/UC_UMEcP_kF0z4E6KbxCpV1w">
+                               Useful videos
+                           </a> 
+                           to improve your Javascript skills. Subscribe and stay tuned :)
+                        </td>
+                        <td class="unit">$0.00</td>
+                        <td class="qty">100</td>
+                        <td class="total">$0.00</td>
+                    </tr> -->
+                    <tr>
+                        <td class="no"></td>
+                        <td class="qty"></td>
+                        <td class="unit"></td>
+                        <td class="qty"></td>
+                        <td class="qty"><?php echo $invoicenew1['sgst'];?></td>
+                        <td class="qty"><?php echo $invoicenew1['cgst'];?></td>
+                        <td class="total"><?php echo $invoicenew1['total'];?></td>
+                    </tr>
+                   
+                </tbody>
+                
+                <tfoot >
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2">SUBTOTAL</td>
+                        <td>$5,200.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2">TAX 25%</td>
+                        <td>$1,300.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td colspan="3">GRAND TOTAL</td>
+                        <td style="text-align:center">$6,500.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="thanks">Thank you!</div>
+            <div class="notices">
+                <div>NOTICE:</div>
+                <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+            </div>
+        </main>
+        <footer style="text-align:center">
+            Invoice was created on a computer and is valid without the signature and seal.
+        </footer>
+    </div>
+    <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+    <div></div>
+</div>
+
+</div>
+</body>
+</html>
